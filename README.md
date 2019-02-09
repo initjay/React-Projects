@@ -1,1 +1,1 @@
-# Location-Alarm
+# Initial setup of React Native
