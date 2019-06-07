@@ -1,7 +1,11 @@
 import React from "react";
 
-const UserInput = proprs => {
-  return <div>Test</div>;
+const UserInput = props => {
+  return (
+    <div>
+      <input type="text" />
+    </div>
+  );
 };
 
 export default UserInput;
