@@ -12,7 +12,7 @@ class App extends Component {
     ],
     otherText: "Some type of statement"
   };
-
+  // arrow function used since 'this' keyword is used
   userNameChangedHandler = event => {
     this.setState({
       userNames: [
@@ -22,15 +22,13 @@ class App extends Component {
       ]
     });
   };
-
+  // 'this' keyword would refer to eventlistener??? not class object?
   render() {
+    // issue was: must pass Handler method to UserInput NOT Output. Output will update automatically when listening to state changes
     return (
       <div>
-        <UserOutput
-          user={this.state.userNames[0].user}
-          changed={this.userNameChangedHandler}
-        />
-        <UserInput />
+        <UserOutput user={this.state.userNames[0].user} />
+        <UserInput changed={this.userNameChangedHandler} />
         <UserOutput user={this.state.userNames[1].user} />
         <UserInput />
         <UserOutput user={this.state.userNames[2].user} />

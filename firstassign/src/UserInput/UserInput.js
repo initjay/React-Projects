@@ -4,7 +4,7 @@ import "./UserInput.css";
 const userInput = props => {
   return (
     <div>
-      <input type="text" />
+      <input type="text" onChange={props.changed} />
     </div>
   );
 };
