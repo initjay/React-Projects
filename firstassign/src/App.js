@@ -10,16 +10,31 @@ class App extends Component {
       { user: "noobmaster69" },
       { user: "theslayer77" }
     ],
-    security: "Some type of statement"
+    otherText: "Some type of statement"
+  };
+
+  userNameChangedHandler = event => {
+    this.setState({
+      userNames: [
+        { user: event.target.value },
+        { user: "noobmaster69" },
+        { user: "theslayer77" }
+      ]
+    });
   };
 
   render() {
     return (
       <div>
+        <UserOutput
+          user={this.state.userNames[0].user}
+          changed={this.userNameChangedHandler}
+        />
         <UserInput />
-        <UserOutput user={this.state.userNames[0].user} />
         <UserOutput user={this.state.userNames[1].user} />
+        <UserInput />
         <UserOutput user={this.state.userNames[2].user} />
+        <UserInput />
       </div>
     );
   }

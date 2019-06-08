@@ -1,12 +1,14 @@
 import React from "react";
 
-const UserOutput = props => {
+const userOutput = props => {
   return (
     <div>
-      <p>User Name: {props.user}</p>
-      <p>I am the second Paragraph!</p>
+      <p onChange={props.changed} value={props.name}>
+        User Name: {props.user}
+      </p>
+      <p>Change your user name if you'd like:</p>
     </div>
   );
 };
 
-export default UserOutput;
+export default userOutput;
