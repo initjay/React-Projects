@@ -13,12 +13,30 @@ class App extends Component {
     otherText: "Some type of statement"
   };
   // arrow function used since 'this' keyword is used
-  userNameChangedHandler = event => {
+  userNameChangedHandler1 = event => {
     this.setState({
       userNames: [
         { user: event.target.value },
         { user: "noobmaster69" },
         { user: "theslayer77" }
+      ]
+    });
+  };
+  userNameChangedHandler2 = event => {
+    this.setState({
+      userNames: [
+        { user: "jumpjam" },
+        { user: event.target.value },
+        { user: "theslayer77" }
+      ]
+    });
+  };
+  userNameChangedHandler3 = event => {
+    this.setState({
+      userNames: [
+        { user: "jumpjam" },
+        { user: "noobmaster69" },
+        { user: event.target.value }
       ]
     });
   };
@@ -28,11 +46,20 @@ class App extends Component {
     return (
       <div>
         <UserOutput user={this.state.userNames[0].user} />
-        <UserInput changed={this.userNameChangedHandler} />
+        <UserInput
+          changed={this.userNameChangedHandler1}
+          currentName={this.state.userNames[0].user}
+        />
         <UserOutput user={this.state.userNames[1].user} />
-        <UserInput />
+        <UserInput
+          changed={this.userNameChangedHandler2}
+          currentName={this.state.userNames[1].user}
+        />
         <UserOutput user={this.state.userNames[2].user} />
-        <UserInput />
+        <UserInput
+          changed={this.userNameChangedHandler3}
+          currentName={this.state.userNames[2].user}
+        />
       </div>
     );
   }

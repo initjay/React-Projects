@@ -1,10 +1,19 @@
 import React from "react";
-import "./UserInput.css";
 
 const userInput = props => {
+  const inputStyle = {
+    border: "2px solid blue",
+    align: "center"
+  };
+
   return (
-    <div>
-      <input type="text" onChange={props.changed} />
+    <div align="center">
+      <input
+        type="text"
+        style={inputStyle}
+        onChange={props.changed}
+        value={props.currentName}
+      />
     </div>
   );
 };
